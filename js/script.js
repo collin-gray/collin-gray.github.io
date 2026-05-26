@@ -1,93 +1,88 @@
 /**
- * FOUNDRY PRINT AND PROMO — script.js
+ * FOUNDRY PRINT AND PROMO — script.js  FINAL v4
  *
  * 1. Dynamic copyright year
  * 2. Header scroll state
- * 3. Mobile nav toggle (open / close / Escape / outside click)
- * 4. Smooth scroll for all in-page anchors with header offset
- * 5. Active nav-link highlighting via IntersectionObserver
- * 6. Scroll-triggered entrance animations (.reveal / .reveal-grid)
+ * 3. Mobile nav (open/close/escape/outside-click/resize)
+ * 4. Smooth scroll with header offset
+ * 5. Active nav link highlighting (IntersectionObserver)
+ * 6. Scroll-triggered entrance animations (prefers-reduced-motion aware)
  */
 
 (function () {
   'use strict';
 
   /* --------------------------------------------------
-     1. DYNAMIC YEAR
+     1. YEAR
   -------------------------------------------------- */
-  const yearEl = document.getElementById('current-year');
-  if (yearEl) yearEl.textContent = new Date().getFullYear();
+  var yr = document.getElementById('current-year');
+  if (yr) yr.textContent = new Date().getFullYear();
 
 
   /* --------------------------------------------------
      2. HEADER SCROLL STATE
-     Adds .scrolled class after 12px — CSS darkens bg.
   -------------------------------------------------- */
-  const header = document.getElementById('site-header');
+  var header = document.getElementById('site-header');
 
-  function onScroll () {
+  function onScroll() {
     if (!header) return;
     header.classList.toggle('scrolled', window.scrollY > 12);
   }
 
   window.addEventListener('scroll', onScroll, { passive: true });
-  onScroll(); // run immediately in case page loads mid-scroll
+  onScroll();
 
 
   /* --------------------------------------------------
-     3. MOBILE NAV TOGGLE
+     3. MOBILE NAV
   -------------------------------------------------- */
-  const mobileBtn = document.getElementById('mobile-btn');
-  const mobileNav = document.getElementById('mobile-nav');
+  var btn = document.getElementById('mobile-btn');
+  var nav = document.getElementById('mobile-nav');
 
-  function openNav () {
-    if (!mobileBtn || !mobileNav) return;
-    mobileBtn.classList.add('open');
-    mobileBtn.setAttribute('aria-expanded', 'true');
-    mobileNav.classList.add('open');
-    mobileNav.setAttribute('aria-hidden', 'false');
+  function openNav() {
+    if (!btn || !nav) return;
+    btn.classList.add('open');
+    btn.setAttribute('aria-expanded', 'true');
+    btn.setAttribute('aria-label', 'Close navigation menu');
+    nav.classList.add('open');
+    nav.setAttribute('aria-hidden', 'false');
     document.body.style.overflow = 'hidden';
   }
 
-  function closeNav () {
-    if (!mobileBtn || !mobileNav) return;
-    mobileBtn.classList.remove('open');
-    mobileBtn.setAttribute('aria-expanded', 'false');
-    mobileNav.classList.remove('open');
-    mobileNav.setAttribute('aria-hidden', 'true');
+  function closeNav() {
+    if (!btn || !nav) return;
+    btn.classList.remove('open');
+    btn.setAttribute('aria-expanded', 'false');
+    btn.setAttribute('aria-label', 'Open navigation menu');
+    nav.classList.remove('open');
+    nav.setAttribute('aria-hidden', 'true');
     document.body.style.overflow = '';
   }
 
-  if (mobileBtn) {
-    mobileBtn.addEventListener('click', function () {
-      mobileBtn.classList.contains('open') ? closeNav() : openNav();
+  if (btn) {
+    btn.addEventListener('click', function () {
+      btn.classList.contains('open') ? closeNav() : openNav();
     });
   }
 
-  // Close when a nav link is tapped
   document.querySelectorAll('.mobile-nav-link, .mobile-nav-cta').forEach(function (el) {
     el.addEventListener('click', closeNav);
   });
 
-  // Close on outside click
   document.addEventListener('click', function (e) {
-    if (!mobileNav || !mobileBtn) return;
-    if (
-      mobileNav.classList.contains('open') &&
-      !mobileNav.contains(e.target) &&
-      !mobileBtn.contains(e.target)
-    ) closeNav();
-  });
-
-  // Close on Escape
-  document.addEventListener('keydown', function (e) {
-    if (e.key === 'Escape' && mobileNav && mobileNav.classList.contains('open')) {
+    if (nav && nav.classList.contains('open') &&
+        !nav.contains(e.target) && btn && !btn.contains(e.target)) {
       closeNav();
-      if (mobileBtn) mobileBtn.focus();
     }
   });
 
-  // Close on resize to desktop
+  document.addEventListener('keydown', function (e) {
+    if (e.key === 'Escape' && nav && nav.classList.contains('open')) {
+      closeNav();
+      if (btn) btn.focus();
+    }
+  });
+
   window.addEventListener('resize', function () {
     if (window.innerWidth > 1024) closeNav();
   });
@@ -95,18 +90,16 @@
 
   /* --------------------------------------------------
      4. SMOOTH SCROLL WITH HEADER OFFSET
-     Works for all <a href="#..."> links.
   -------------------------------------------------- */
-  function getHeaderH () {
+  function headerH() {
     return parseInt(
-      getComputedStyle(document.documentElement).getPropertyValue('--header-h'),
-      10
-    ) || 72;
+      getComputedStyle(document.documentElement).getPropertyValue('--header-h'), 10
+    ) || 76;
   }
 
-  document.querySelectorAll('a[href^="#"]').forEach(function (anchor) {
-    anchor.addEventListener('click', function (e) {
-      const href = this.getAttribute('href');
+  document.querySelectorAll('a[href^="#"]').forEach(function (a) {
+    a.addEventListener('click', function (e) {
+      var href = this.getAttribute('href');
 
       if (href === '#') {
         e.preventDefault();
@@ -114,73 +107,64 @@
         return;
       }
 
-      const target = document.querySelector(href);
+      var target = document.querySelector(href);
       if (!target) return;
-
       e.preventDefault();
 
-      const top = target.getBoundingClientRect().top + window.scrollY - getHeaderH() - 8;
-      window.scrollTo({ top, behavior: 'smooth' });
+      var top = target.getBoundingClientRect().top + window.scrollY - headerH() - 8;
+      window.scrollTo({ top: top, behavior: 'smooth' });
 
-      if (history.pushState) history.pushState(null, null, href);
+      if (history.pushState) history.pushState(null, '', href);
     });
   });
 
 
   /* --------------------------------------------------
      5. ACTIVE NAV LINK HIGHLIGHTING
-     IntersectionObserver watches each section[id].
   -------------------------------------------------- */
-  const sections  = document.querySelectorAll('section[id]');
-  const navLinks  = document.querySelectorAll('.nav-link');
+  var sections = document.querySelectorAll('section[id]');
+  var links    = document.querySelectorAll('.nav-link');
 
-  if (sections.length && navLinks.length && 'IntersectionObserver' in window) {
-    const activeObserver = new IntersectionObserver(
-      function (entries) {
-        entries.forEach(function (entry) {
-          if (entry.isIntersecting) {
-            const id = entry.target.id;
-            navLinks.forEach(function (link) {
-              link.classList.toggle('active', link.getAttribute('href') === '#' + id);
-            });
-          }
-        });
-      },
-      { rootMargin: '-38% 0px -52% 0px', threshold: 0 }
-    );
+  if (sections.length && links.length && 'IntersectionObserver' in window) {
+    var activeObs = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        if (entry.isIntersecting) {
+          var id = entry.target.id;
+          links.forEach(function (l) {
+            l.classList.toggle('active', l.getAttribute('href') === '#' + id);
+          });
+        }
+      });
+    }, { rootMargin: '-38% 0px -52% 0px', threshold: 0 });
 
-    sections.forEach(function (s) { activeObserver.observe(s); });
+    sections.forEach(function (s) { activeObs.observe(s); });
   }
 
 
   /* --------------------------------------------------
-     6. SCROLL-TRIGGERED ENTRANCE ANIMATIONS
-     .reveal        — single element fade-up
-     .reveal-grid   — grid whose children stagger in
+     6. SCROLL-TRIGGERED ANIMATIONS
+     Respects prefers-reduced-motion.
   -------------------------------------------------- */
-  if ('IntersectionObserver' in window) {
+  var reducedMotion = window.matchMedia &&
+    window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
-    const revealObserver = new IntersectionObserver(
-      function (entries) {
-        entries.forEach(function (entry) {
-          if (entry.isIntersecting) {
-            entry.target.classList.add('in-view');
-            revealObserver.unobserve(entry.target);
-          }
-        });
-      },
-      { rootMargin: '0px 0px -6% 0px', threshold: 0.06 }
-    );
+  var revealEls = document.querySelectorAll('.reveal, .reveal-grid');
 
-    document.querySelectorAll('.reveal, .reveal-grid').forEach(function (el) {
-      revealObserver.observe(el);
-    });
+  if (reducedMotion) {
+    revealEls.forEach(function (el) { el.classList.add('in-view'); });
+  } else if ('IntersectionObserver' in window) {
+    var revObs = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('in-view');
+          revObs.unobserve(entry.target);
+        }
+      });
+    }, { rootMargin: '0px 0px -6% 0px', threshold: 0.06 });
 
+    revealEls.forEach(function (el) { revObs.observe(el); });
   } else {
-    // Fallback: show everything immediately
-    document.querySelectorAll('.reveal, .reveal-grid').forEach(function (el) {
-      el.classList.add('in-view');
-    });
+    revealEls.forEach(function (el) { el.classList.add('in-view'); });
   }
 
 })();
