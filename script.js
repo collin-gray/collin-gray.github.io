@@ -1,134 +1,113 @@
 /**
- * FOUNDRY PRINT AND PROMO — JAVASCRIPT
- * script.js
+ * FOUNDRY PRINT AND PROMO — script.js
  *
- * Features:
- *  1. Dynamic copyright year in footer
- *  2. Sticky header scroll state
- *  3. Mobile navigation toggle
- *  4. Smooth scroll for all in-page anchor links
- *  5. Active nav link highlighting on scroll
- *  6. Scroll-triggered entrance animations (IntersectionObserver)
- *  7. Mobile nav: close on link click or outside click
+ * 1. Dynamic copyright year
+ * 2. Header scroll state
+ * 3. Mobile nav toggle (open / close / Escape / outside click)
+ * 4. Smooth scroll for all in-page anchors with header offset
+ * 5. Active nav-link highlighting via IntersectionObserver
+ * 6. Scroll-triggered entrance animations (.reveal / .reveal-grid)
  */
 
 (function () {
   'use strict';
 
-  // ================================================
-  // 1. DYNAMIC COPYRIGHT YEAR
-  // ================================================
+  /* --------------------------------------------------
+     1. DYNAMIC YEAR
+  -------------------------------------------------- */
   const yearEl = document.getElementById('current-year');
-  if (yearEl) {
-    yearEl.textContent = new Date().getFullYear();
-  }
+  if (yearEl) yearEl.textContent = new Date().getFullYear();
 
 
-  // ================================================
-  // 2. STICKY HEADER SCROLL STATE
-  // Adds .is-scrolled class to header after 10px scroll.
-  // CSS uses this to slightly darken the background.
-  // ================================================
+  /* --------------------------------------------------
+     2. HEADER SCROLL STATE
+     Adds .scrolled class after 12px — CSS darkens bg.
+  -------------------------------------------------- */
   const header = document.getElementById('site-header');
 
-  function handleHeaderScroll() {
+  function onScroll () {
     if (!header) return;
-    if (window.scrollY > 10) {
-      header.classList.add('is-scrolled');
-    } else {
-      header.classList.remove('is-scrolled');
-    }
+    header.classList.toggle('scrolled', window.scrollY > 12);
   }
 
-  window.addEventListener('scroll', handleHeaderScroll, { passive: true });
-  handleHeaderScroll(); // Run on load in case page is already scrolled
+  window.addEventListener('scroll', onScroll, { passive: true });
+  onScroll(); // run immediately in case page loads mid-scroll
 
 
-  // ================================================
-  // 3. MOBILE NAVIGATION TOGGLE
-  // ================================================
-  const mobileMenuBtn = document.getElementById('mobile-menu-btn');
-  const mobileNav     = document.getElementById('mobile-nav');
+  /* --------------------------------------------------
+     3. MOBILE NAV TOGGLE
+  -------------------------------------------------- */
+  const mobileBtn = document.getElementById('mobile-btn');
+  const mobileNav = document.getElementById('mobile-nav');
 
-  function openMobileNav() {
-    if (!mobileMenuBtn || !mobileNav) return;
-    mobileMenuBtn.classList.add('is-open');
-    mobileMenuBtn.setAttribute('aria-expanded', 'true');
-    mobileNav.classList.add('is-open');
+  function openNav () {
+    if (!mobileBtn || !mobileNav) return;
+    mobileBtn.classList.add('open');
+    mobileBtn.setAttribute('aria-expanded', 'true');
+    mobileNav.classList.add('open');
     mobileNav.setAttribute('aria-hidden', 'false');
-    document.body.style.overflow = 'hidden'; // Prevent scroll while nav is open
+    document.body.style.overflow = 'hidden';
   }
 
-  function closeMobileNav() {
-    if (!mobileMenuBtn || !mobileNav) return;
-    mobileMenuBtn.classList.remove('is-open');
-    mobileMenuBtn.setAttribute('aria-expanded', 'false');
-    mobileNav.classList.remove('is-open');
+  function closeNav () {
+    if (!mobileBtn || !mobileNav) return;
+    mobileBtn.classList.remove('open');
+    mobileBtn.setAttribute('aria-expanded', 'false');
+    mobileNav.classList.remove('open');
     mobileNav.setAttribute('aria-hidden', 'true');
     document.body.style.overflow = '';
   }
 
-  function toggleMobileNav() {
-    const isOpen = mobileMenuBtn.classList.contains('is-open');
-    if (isOpen) {
-      closeMobileNav();
-    } else {
-      openMobileNav();
-    }
+  if (mobileBtn) {
+    mobileBtn.addEventListener('click', function () {
+      mobileBtn.classList.contains('open') ? closeNav() : openNav();
+    });
   }
 
-  if (mobileMenuBtn) {
-    mobileMenuBtn.addEventListener('click', toggleMobileNav);
-  }
-
-  // Close mobile nav when a mobile nav link is clicked
-  const mobileNavLinks = document.querySelectorAll('.mobile-nav-link, .mobile-cta');
-  mobileNavLinks.forEach(function (link) {
-    link.addEventListener('click', closeMobileNav);
+  // Close when a nav link is tapped
+  document.querySelectorAll('.mobile-nav-link, .mobile-nav-cta').forEach(function (el) {
+    el.addEventListener('click', closeNav);
   });
 
-  // Close mobile nav when clicking outside of it
+  // Close on outside click
   document.addEventListener('click', function (e) {
-    if (!mobileNav || !mobileMenuBtn) return;
+    if (!mobileNav || !mobileBtn) return;
     if (
-      mobileNav.classList.contains('is-open') &&
+      mobileNav.classList.contains('open') &&
       !mobileNav.contains(e.target) &&
-      !mobileMenuBtn.contains(e.target)
-    ) {
-      closeMobileNav();
-    }
+      !mobileBtn.contains(e.target)
+    ) closeNav();
   });
 
-  // Close mobile nav on resize to desktop width
-  window.addEventListener('resize', function () {
-    if (window.innerWidth > 1024) {
-      closeMobileNav();
-    }
-  });
-
-  // Close mobile nav on Escape key
+  // Close on Escape
   document.addEventListener('keydown', function (e) {
-    if (e.key === 'Escape' && mobileNav && mobileNav.classList.contains('is-open')) {
-      closeMobileNav();
-      if (mobileMenuBtn) mobileMenuBtn.focus();
+    if (e.key === 'Escape' && mobileNav && mobileNav.classList.contains('open')) {
+      closeNav();
+      if (mobileBtn) mobileBtn.focus();
     }
   });
 
+  // Close on resize to desktop
+  window.addEventListener('resize', function () {
+    if (window.innerWidth > 1024) closeNav();
+  });
 
-  // ================================================
-  // 4. SMOOTH SCROLL FOR ALL IN-PAGE ANCHOR LINKS
-  // Handles offset for the fixed header.
-  // ================================================
-  const headerHeight = parseInt(
-    getComputedStyle(document.documentElement).getPropertyValue('--header-height'),
-    10
-  ) || 72;
+
+  /* --------------------------------------------------
+     4. SMOOTH SCROLL WITH HEADER OFFSET
+     Works for all <a href="#..."> links.
+  -------------------------------------------------- */
+  function getHeaderH () {
+    return parseInt(
+      getComputedStyle(document.documentElement).getPropertyValue('--header-h'),
+      10
+    ) || 72;
+  }
 
   document.querySelectorAll('a[href^="#"]').forEach(function (anchor) {
     anchor.addEventListener('click', function (e) {
       const href = this.getAttribute('href');
 
-      // Skip empty hashes
       if (href === '#') {
         e.preventDefault();
         window.scrollTo({ top: 0, behavior: 'smooth' });
@@ -140,117 +119,68 @@
 
       e.preventDefault();
 
-      const targetTop = target.getBoundingClientRect().top + window.scrollY - headerHeight;
+      const top = target.getBoundingClientRect().top + window.scrollY - getHeaderH() - 8;
+      window.scrollTo({ top, behavior: 'smooth' });
 
-      window.scrollTo({
-        top: targetTop,
-        behavior: 'smooth'
-      });
-
-      // Update URL hash without jumping
-      if (history.pushState) {
-        history.pushState(null, null, href);
-      }
+      if (history.pushState) history.pushState(null, null, href);
     });
   });
 
 
-  // ================================================
-  // 5. ACTIVE NAV LINK HIGHLIGHTING ON SCROLL
-  // Uses IntersectionObserver to track which section
-  // is in view and marks the corresponding nav link active.
-  // ================================================
+  /* --------------------------------------------------
+     5. ACTIVE NAV LINK HIGHLIGHTING
+     IntersectionObserver watches each section[id].
+  -------------------------------------------------- */
   const sections  = document.querySelectorAll('section[id]');
   const navLinks  = document.querySelectorAll('.nav-link');
 
-  if (sections.length && navLinks.length) {
-    const sectionObserver = new IntersectionObserver(
+  if (sections.length && navLinks.length && 'IntersectionObserver' in window) {
+    const activeObserver = new IntersectionObserver(
       function (entries) {
         entries.forEach(function (entry) {
           if (entry.isIntersecting) {
-            const id = entry.target.getAttribute('id');
+            const id = entry.target.id;
             navLinks.forEach(function (link) {
-              link.classList.remove('is-active');
-              if (link.getAttribute('href') === '#' + id) {
-                link.classList.add('is-active');
-              }
+              link.classList.toggle('active', link.getAttribute('href') === '#' + id);
             });
           }
         });
       },
-      {
-        rootMargin: '-40% 0px -50% 0px',
-        threshold: 0
-      }
+      { rootMargin: '-38% 0px -52% 0px', threshold: 0 }
     );
 
-    sections.forEach(function (section) {
-      sectionObserver.observe(section);
-    });
+    sections.forEach(function (s) { activeObserver.observe(s); });
   }
 
 
-  // ================================================
-  // 6. SCROLL-TRIGGERED ENTRANCE ANIMATIONS
-  // Adds .animate-on-scroll class to eligible elements,
-  // then observes them. CSS handles the transition.
-  //
-  // Elements that animate: serve-card, service-card,
-  // why-card, process-step, work-card, section headings.
-  // ================================================
-  const animatableSelectors = [
-    '.serve-card',
-    '.service-card',
-    '.why-card',
-    '.process-step',
-    '.work-card',
-    '.agency-stat',
-    '.faith-inner',
-    '.final-cta-inner'
-  ];
-
-  const animatableElements = document.querySelectorAll(
-    animatableSelectors.join(', ')
-  );
-
-  // Only run if browser supports IntersectionObserver
+  /* --------------------------------------------------
+     6. SCROLL-TRIGGERED ENTRANCE ANIMATIONS
+     .reveal        — single element fade-up
+     .reveal-grid   — grid whose children stagger in
+  -------------------------------------------------- */
   if ('IntersectionObserver' in window) {
-    animatableElements.forEach(function (el) {
-      el.classList.add('animate-on-scroll');
-    });
 
-    const animationObserver = new IntersectionObserver(
+    const revealObserver = new IntersectionObserver(
       function (entries) {
         entries.forEach(function (entry) {
           if (entry.isIntersecting) {
-            entry.target.classList.add('is-visible');
-            // Stop observing once animated — no need to re-trigger
-            animationObserver.unobserve(entry.target);
+            entry.target.classList.add('in-view');
+            revealObserver.unobserve(entry.target);
           }
         });
       },
-      {
-        rootMargin: '0px 0px -8% 0px',
-        threshold: 0.08
-      }
+      { rootMargin: '0px 0px -6% 0px', threshold: 0.06 }
     );
 
-    animatableElements.forEach(function (el) {
-      animationObserver.observe(el);
+    document.querySelectorAll('.reveal, .reveal-grid').forEach(function (el) {
+      revealObserver.observe(el);
     });
+
   } else {
-    // Fallback: show all elements immediately if IntersectionObserver unsupported
-    animatableElements.forEach(function (el) {
-      el.classList.add('animate-on-scroll', 'is-visible');
+    // Fallback: show everything immediately
+    document.querySelectorAll('.reveal, .reveal-grid').forEach(function (el) {
+      el.classList.add('in-view');
     });
   }
-
-
-  // ================================================
-  // 7. LOGO IMAGE ERROR HANDLING
-  // If the SVG logo fails to load, the onerror
-  // attributes in HTML handle the fallback.
-  // No additional JS needed here.
-  // ================================================
 
 })();

@@ -3,36 +3,28 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Foundry Print and Promo — Brand apparel, promotional goods, signage, and team stores for colleges, trades, hospitality groups, sports teams, and corporate organizations. Based in Charleston. National shipping available." />
-  <meta name="theme-color" content="#1C1C1C" />
+  <meta name="description" content="Foundry Print and Promo — Brand apparel, promotional goods, signage, and team stores for colleges, trades, hospitality groups, sports teams, and corporate organizations. Based in Charleston, SC. National shipping available." />
+  <meta name="theme-color" content="#141412" />
 
   <title>Foundry Print and Promo | Ideas Forged Into Goods</title>
 
-  <!-- ================================================
-       FONTS
-       Bebas Neue: industrial display headings
-       Barlow Condensed: subheadings and labels
-       Barlow: body copy
-  ================================================ -->
+  <!-- FONTS: Bebas Neue / Barlow Condensed / Barlow -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link
-    href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Barlow+Condensed:wght@400;500;600;700&family=Barlow:wght@300;400;500;600&display=swap"
-    rel="stylesheet"
-  />
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Barlow+Condensed:wght@400;500;600;700&family=Barlow:wght@300;400;500;600&display=swap" rel="stylesheet" />
 
   <link rel="stylesheet" href="css/styles.css" />
 </head>
 
 <body>
 
-  <!-- ================================================
-       HEADER / NAVIGATION
-  ================================================ -->
+  <!-- ============================================================
+       HEADER
+  ============================================================ -->
   <header class="site-header" id="site-header" role="banner">
     <div class="container header-inner">
 
-      <!-- LOGO: Place your file at assets/Primary Light.svg -->
+      <!-- LOGO — place file at: assets/Primary Light.svg -->
       <a href="#hero" class="logo-link" aria-label="Foundry Print and Promo — Home">
         <img
           src="assets/Primary Light.svg"
@@ -40,61 +32,47 @@
           class="logo-img"
           onerror="this.style.display='none'; document.getElementById('logo-fallback').style.display='flex';"
         />
-        <!-- Text fallback if SVG does not load -->
         <span class="logo-fallback" id="logo-fallback" aria-hidden="true">
-          <span class="logo-fallback-foundry">FOUNDRY</span>
+          <span class="logo-fallback-name">FOUNDRY</span>
           <span class="logo-fallback-sub">PRINT &amp; PROMO</span>
         </span>
       </a>
 
-      <!-- DESKTOP NAV -->
       <nav class="main-nav" aria-label="Main navigation">
         <ul class="nav-list" role="list">
           <li><a href="#who-we-serve" class="nav-link">Who We Serve</a></li>
-          <li><a href="#services" class="nav-link">Services</a></li>
-          <li><a href="#why-foundry" class="nav-link">Why Foundry</a></li>
-          <li><a href="#process" class="nav-link">Process</a></li>
-          <li><a href="#agency" class="nav-link">Agency</a></li>
+          <li><a href="#services"     class="nav-link">Services</a></li>
+          <li><a href="#why-foundry"  class="nav-link">Why Foundry</a></li>
+          <li><a href="#process"      class="nav-link">Process</a></li>
+          <li><a href="#agency"       class="nav-link">Agency</a></li>
         </ul>
       </nav>
 
-      <!-- HEADER CTA -->
-      <a
-        href="mailto:Collin@foundryprintpromo.com?subject=New%20Project%20Inquiry%20-%20Foundry%20Print%20and%20Promo&body=Name%3A%0ACompany%3A%0APhone%3A%0AProject%20Type%3A%0AEstimated%20Quantity%3A%0ANeeded%20By%3A%0ATell%20us%20about%20the%20project%3A"
-        class="btn btn-primary btn-sm"
-        aria-label="Start a project with Foundry"
-      >
+      <a href="mailto:Collin@foundryprintpromo.com?subject=New%20Project%20Inquiry%20-%20Foundry%20Print%20and%20Promo&body=Name%3A%0ACompany%3A%0APhone%3A%0AProject%20Type%3A%0AEstimated%20Quantity%3A%0ANeeded%20By%3A%0ATell%20us%20about%20the%20project%3A"
+         class="btn btn-primary btn-sm"
+         aria-label="Start a project with Foundry">
         Start a Project
       </a>
 
-      <!-- MOBILE MENU BUTTON -->
-      <button
-        class="mobile-menu-btn"
-        id="mobile-menu-btn"
-        aria-label="Open navigation menu"
-        aria-expanded="false"
-        aria-controls="mobile-nav"
-      >
-        <span class="hamburger-line"></span>
-        <span class="hamburger-line"></span>
-        <span class="hamburger-line"></span>
+      <button class="mobile-btn" id="mobile-btn"
+              aria-label="Open navigation menu"
+              aria-expanded="false" aria-controls="mobile-nav">
+        <span class="ham-line"></span>
+        <span class="ham-line"></span>
+        <span class="ham-line"></span>
       </button>
-
     </div>
 
-    <!-- MOBILE NAV DRAWER -->
     <nav class="mobile-nav" id="mobile-nav" aria-label="Mobile navigation" aria-hidden="true">
       <ul class="mobile-nav-list" role="list">
         <li><a href="#who-we-serve" class="mobile-nav-link">Who We Serve</a></li>
-        <li><a href="#services" class="mobile-nav-link">Services</a></li>
-        <li><a href="#why-foundry" class="mobile-nav-link">Why Foundry</a></li>
-        <li><a href="#process" class="mobile-nav-link">Process</a></li>
-        <li><a href="#agency" class="mobile-nav-link">Agency</a></li>
+        <li><a href="#services"     class="mobile-nav-link">Services</a></li>
+        <li><a href="#why-foundry"  class="mobile-nav-link">Why Foundry</a></li>
+        <li><a href="#process"      class="mobile-nav-link">Process</a></li>
+        <li><a href="#agency"       class="mobile-nav-link">Agency</a></li>
         <li>
-          <a
-            href="mailto:Collin@foundryprintpromo.com?subject=New%20Project%20Inquiry%20-%20Foundry%20Print%20and%20Promo&body=Name%3A%0ACompany%3A%0APhone%3A%0AProject%20Type%3A%0AEstimated%20Quantity%3A%0ANeeded%20By%3A%0ATell%20us%20about%20the%20project%3A"
-            class="btn btn-primary mobile-cta"
-          >
+          <a href="mailto:Collin@foundryprintpromo.com?subject=New%20Project%20Inquiry%20-%20Foundry%20Print%20and%20Promo&body=Name%3A%0ACompany%3A%0APhone%3A%0AProject%20Type%3A%0AEstimated%20Quantity%3A%0ANeeded%20By%3A%0ATell%20us%20about%20the%20project%3A"
+             class="btn btn-primary mobile-nav-cta">
             Start a Project
           </a>
         </li>
@@ -105,192 +83,199 @@
 
   <main>
 
-    <!-- ================================================
-         SECTION 01: HERO
-         COPY DIRECTION: Confident, specific, no hype.
-         The headline anchors the brand promise.
-         The subhead disqualifies cheap vendors without
-         naming them. The qualifier sets expectations.
-    ================================================ -->
+    <!-- ============================================================
+         01 — HERO
+    ============================================================ -->
     <section class="hero" id="hero" aria-label="Hero">
-      <div class="hero-bg-texture" aria-hidden="true"></div>
-      <div class="hero-grid-overlay" aria-hidden="true"></div>
+      <div class="hero-noise"    aria-hidden="true"></div>
+      <div class="hero-grid"     aria-hidden="true"></div>
+      <div class="hero-vignette" aria-hidden="true"></div>
+      <div class="hero-sidebar"  aria-hidden="true"></div>
 
       <div class="container hero-content">
 
-        <p class="hero-eyebrow">Charleston, SC &mdash; Serving Organizations Nationwide</p>
+        <div class="hero-main">
+          <!-- Eyebrow stamps -->
+          <div class="hero-eyebrow">
+            <span class="hero-eyebrow-pill">Charleston, SC</span>
+            <span class="hero-eyebrow-dot" aria-hidden="true"></span>
+            <span class="hero-eyebrow-pill">National Shipping Available</span>
+          </div>
 
-        <h1 class="hero-headline">
-          The Partner<br />Who Shows<br />Up.
-        </h1>
+          <h1 class="hero-headline">
+            The Partner<br />Who Shows<br />Up.
+          </h1>
 
-        <p class="hero-subhead">
-          Most branded goods vendors are easy to reach until the order is placed.
-          Foundry is different. We are a production partner built on communication,
-          craftsmanship, and the discipline to do exactly what we said we would do.
-        </p>
+          <p class="hero-body">
+            Most branded goods vendors are easy to reach until the order is placed.
+            Foundry is different. We are a production partner built on communication,
+            craftsmanship, and the discipline to do exactly what we said we would do.
+          </p>
 
-        <div class="hero-cta-group">
-          <a
-            href="mailto:Collin@foundryprintpromo.com?subject=New%20Project%20Inquiry%20-%20Foundry%20Print%20and%20Promo&body=Name%3A%0ACompany%3A%0APhone%3A%0AProject%20Type%3A%0AEstimated%20Quantity%3A%0ANeeded%20By%3A%0ATell%20us%20about%20the%20project%3A"
-            class="btn btn-primary btn-lg"
-          >
-            Start a Project
-          </a>
-          <a href="#services" class="btn btn-secondary btn-lg">
-            View Services
-          </a>
+          <div class="btn-group">
+            <a href="mailto:Collin@foundryprintpromo.com?subject=New%20Project%20Inquiry%20-%20Foundry%20Print%20and%20Promo&body=Name%3A%0ACompany%3A%0APhone%3A%0AProject%20Type%3A%0AEstimated%20Quantity%3A%0ANeeded%20By%3A%0ATell%20us%20about%20the%20project%3A"
+               class="btn btn-primary btn-lg">
+              Start a Project
+            </a>
+            <a href="#services" class="btn btn-secondary btn-lg">View Services</a>
+          </div>
+
+          <p class="hero-qualifier">
+            Built for established teams and organizations. Project minimums may apply.
+          </p>
         </div>
 
-        <p class="hero-qualifier">
-          Built for established teams and organizations. Project minimums may apply.
-        </p>
+        <!-- Right-column stats — hidden on mobile via CSS -->
+        <aside class="hero-aside" aria-label="Key facts">
+          <div class="hero-aside-stat">
+            <div class="hero-aside-num">5</div>
+            <div class="hero-aside-label">Service Categories</div>
+          </div>
+          <div class="hero-aside-stat">
+            <div class="hero-aside-num">1</div>
+            <div class="hero-aside-label">Point of Contact</div>
+          </div>
+          <div class="hero-aside-stat">
+            <div class="hero-aside-num">0</div>
+            <div class="hero-aside-label">Ghosted Clients</div>
+          </div>
+        </aside>
 
       </div>
 
-      <!-- Decorative vertical rule -->
-      <div class="hero-rule" aria-hidden="true"></div>
+      <div class="hero-bottom-bar" aria-hidden="true"></div>
     </section>
 
 
-    <!-- ================================================
-         SECTION 02: TRUST / POSITIONING STRIP
-    ================================================ -->
+    <!-- ============================================================
+         02 — TRUST STRIP
+    ============================================================ -->
     <section class="trust-strip" aria-label="Core commitments">
-      <div class="container">
-        <ul class="trust-list" role="list">
-          <li class="trust-item">
-            <span class="trust-icon" aria-hidden="true">&#9632;</span>
-            Prompt Communication
-          </li>
-          <li class="trust-divider" aria-hidden="true"></li>
-          <li class="trust-item">
-            <span class="trust-icon" aria-hidden="true">&#9632;</span>
-            Intentional Execution
-          </li>
-          <li class="trust-divider" aria-hidden="true"></li>
-          <li class="trust-item">
-            <span class="trust-icon" aria-hidden="true">&#9632;</span>
-            Uncompromising Quality
-          </li>
-          <li class="trust-divider" aria-hidden="true"></li>
-          <li class="trust-item">
-            <span class="trust-icon" aria-hidden="true">&#9632;</span>
-            Charleston Roots. National Reach.
-          </li>
-        </ul>
+      <div class="container trust-inner">
+        <div class="trust-item">
+          <span class="trust-dot" aria-hidden="true"></span>
+          Prompt Communication
+        </div>
+        <div class="trust-divider" aria-hidden="true"></div>
+        <div class="trust-item">
+          <span class="trust-dot" aria-hidden="true"></span>
+          Intentional Execution
+        </div>
+        <div class="trust-divider" aria-hidden="true"></div>
+        <div class="trust-item">
+          <span class="trust-dot" aria-hidden="true"></span>
+          Uncompromising Quality
+        </div>
+        <div class="trust-divider" aria-hidden="true"></div>
+        <div class="trust-item">
+          <span class="trust-dot" aria-hidden="true"></span>
+          Charleston Roots. National Reach.
+        </div>
       </div>
     </section>
 
 
-    <!-- ================================================
-         SECTION 03: WHO WE SERVE
-         COPY DIRECTION: Specific industries, specific pain
-         points per category. Should feel like we know
-         exactly who is reading this.
-         To update, edit the text inside each .serve-card.
-    ================================================ -->
+    <!-- ============================================================
+         03 — WHO WE SERVE
+         To update: edit text inside each .serve-card
+    ============================================================ -->
     <section class="who-we-serve" id="who-we-serve" aria-labelledby="serve-heading">
       <div class="container">
 
-        <div class="section-label">Who We Serve</div>
-        <h2 class="section-heading" id="serve-heading">
-          Built for Organizations<br />That Cannot Afford to Get It Wrong
-        </h2>
-        <p class="section-intro">
-          Foundry does not serve everyone, and that is intentional.
-          We work with organizations that have standards, deadlines, and
-          people counting on them. If that is you, we should talk.
-        </p>
+        <div class="serve-header reveal">
+          <div>
+            <div class="eyebrow">Who We Serve</div>
+            <h2 class="t-heading" id="serve-heading">
+              Built for Organizations<br />That Cannot Afford<br />to Get It Wrong
+            </h2>
+          </div>
+          <p class="section-intro" style="margin-top:0; margin-bottom:0;">
+            Foundry does not serve everyone, and that is intentional.
+            We work with organizations that have standards, deadlines, and
+            people counting on them. If that is you, we should talk.
+          </p>
+        </div>
 
-        <ul class="serve-grid" role="list">
-
+        <ul class="serve-grid reveal-grid" role="list">
           <li class="serve-card">
-            <span class="serve-number">01</span>
+            <div class="serve-num">01</div>
             <h3 class="serve-title">Colleges &amp; Universities</h3>
             <p class="serve-desc">Campus stores, student organizations, athletics programs, and alumni departments that need a production partner who understands institutional standards and does not miss deadlines before game day.</p>
           </li>
-
           <li class="serve-card">
-            <span class="serve-number">02</span>
+            <div class="serve-num">02</div>
             <h3 class="serve-title">Blue-Collar Trades</h3>
             <p class="serve-desc">Contractors, builders, and trade crews whose brand is on a truck, a job site, and a uniform every day. Your apparel is a first impression. We treat it that way.</p>
           </li>
-
           <li class="serve-card">
-            <span class="serve-number">03</span>
+            <div class="serve-num">03</div>
             <h3 class="serve-title">Hospitality Groups</h3>
             <p class="serve-desc">Hotels, restaurants, clubs, and resorts where the brand lives in every detail. Staff uniforms, drinkware, signage, and guest merchandise that hold up to the standard your guests expect.</p>
           </li>
-
           <li class="serve-card">
-            <span class="serve-number">04</span>
+            <div class="serve-num">04</div>
             <h3 class="serve-title">Sports Teams &amp; Leagues</h3>
             <p class="serve-desc">Team kits, fan merchandise, coaching apparel, and tournament gear for programs that represent a community. We understand the pressure of a season calendar and we plan accordingly.</p>
           </li>
-
           <li class="serve-card">
-            <span class="serve-number">05</span>
+            <div class="serve-num">05</div>
             <h3 class="serve-title">Creative Agencies</h3>
             <p class="serve-desc">Design studios and marketing firms that need a production partner they can trust with a client's name on it. White-label capable, process-driven, and built to protect your reputation.</p>
           </li>
-
           <li class="serve-card">
-            <span class="serve-number">06</span>
+            <div class="serve-num">06</div>
             <h3 class="serve-title">Corporate Teams</h3>
             <p class="serve-desc">Company stores, onboarding kits, employee recognition programs, and branded merchandise for organizations where every touchpoint is a reflection of company culture.</p>
           </li>
-
           <li class="serve-card">
-            <span class="serve-number">07</span>
+            <div class="serve-num">07</div>
             <h3 class="serve-title">Events &amp; Festivals</h3>
             <p class="serve-desc">Merchandise programs, sponsor activations, signage packages, and branded goods for events where the details matter and the timeline does not move.</p>
           </li>
-
           <li class="serve-card">
-            <span class="serve-number">08</span>
+            <div class="serve-num">08</div>
             <h3 class="serve-title">Restaurants &amp; Breweries</h3>
             <p class="serve-desc">Staff uniforms, branded drinkware, retail merchandise, packaging, and window graphics for hospitality brands that have built something worth wearing.</p>
           </li>
-
         </ul>
 
       </div>
     </section>
 
 
-    <!-- ================================================
-         SECTION 04: SERVICES
-         COPY DIRECTION: Each description names the
-         specific problem it solves, not just what it is.
-         Confidence without fluff. No catalog language.
-         To update offerings, edit within each .service-card.
-    ================================================ -->
+    <!-- ============================================================
+         04 — SERVICES
+         To update: edit text inside each .service-card
+    ============================================================ -->
     <section class="services" id="services" aria-labelledby="services-heading">
       <div class="container">
 
-        <div class="section-label">What We Produce</div>
-        <h2 class="section-heading" id="services-heading">
-          Five Categories.<br />One Accountable Partner.
-        </h2>
-        <p class="section-intro">
-          Foundry handles the full scope of branded goods production.
-          That means fewer vendors to manage, fewer things to fall through the cracks,
-          and one person who knows your project from start to finish.
-        </p>
+        <div class="services-header reveal">
+          <div>
+            <div class="eyebrow">What We Produce</div>
+            <h2 class="t-heading" id="services-heading">
+              Five Categories.<br />One Accountable<br />Partner.
+            </h2>
+          </div>
+          <p class="section-intro" style="margin-top:0; margin-bottom:0;">
+            Foundry handles the full scope of branded goods production.
+            Fewer vendors to manage, fewer things to fall through the cracks,
+            and one person who knows your project from start to finish.
+          </p>
+        </div>
 
-        <div class="service-grid">
+        <div class="service-grid reveal-grid">
 
           <article class="service-card" aria-label="Brand Apparel">
             <div class="service-card-accent" aria-hidden="true"></div>
-            <div class="service-number-label">01</div>
-            <h3 class="service-title">Brand Apparel</h3>
-            <p class="service-desc">
+            <div class="svc-num">01</div>
+            <h3 class="svc-title">Brand Apparel</h3>
+            <p class="svc-desc">
               Decorated apparel is where a lot of vendors cut corners.
               Wrong ink density, misaligned artwork, fabric that washes out in a season.
               We source correctly, decorate with precision, and inspect before it leaves.
             </p>
-            <ul class="service-items" role="list">
+            <ul class="svc-list" role="list">
               <li>Screen Printing</li>
               <li>Embroidery</li>
               <li>DTF Printing</li>
@@ -302,14 +287,14 @@
 
           <article class="service-card" aria-label="Promotional Goods">
             <div class="service-card-accent" aria-hidden="true"></div>
-            <div class="service-number-label">02</div>
-            <h3 class="service-title">Promotional Goods</h3>
-            <p class="service-desc">
+            <div class="svc-num">02</div>
+            <h3 class="svc-title">Promotional Goods</h3>
+            <p class="svc-desc">
               The wrong promotional product ends up in a drawer.
               The right one gets used every day and carries your brand with it.
               We source goods worth keeping, not goods worth ordering at the lowest price.
             </p>
-            <ul class="service-items" role="list">
+            <ul class="svc-list" role="list">
               <li>Drinkware &amp; Koozies</li>
               <li>Bags &amp; Totes</li>
               <li>Corporate Gifts</li>
@@ -321,15 +306,14 @@
 
           <article class="service-card" aria-label="Signage and Print">
             <div class="service-card-accent" aria-hidden="true"></div>
-            <div class="service-number-label">03</div>
-            <h3 class="service-title">Signage &amp; Print</h3>
-            <p class="service-desc">
+            <div class="svc-num">03</div>
+            <h3 class="svc-title">Signage &amp; Print</h3>
+            <p class="svc-desc">
               Every space your organization occupies is a brand moment.
-              From a job site banner to a hotel lobby display,
-              we produce large-format graphics and printed collateral
-              that hold up in the real world.
+              From a job site banner to a hotel lobby display, we produce
+              large-format graphics and printed collateral that hold up in the real world.
             </p>
-            <ul class="service-items" role="list">
+            <ul class="svc-list" role="list">
               <li>Banners &amp; Displays</li>
               <li>Decals &amp; Stickers</li>
               <li>Window Graphics</li>
@@ -341,14 +325,14 @@
 
           <article class="service-card" aria-label="Team Stores and Programs">
             <div class="service-card-accent" aria-hidden="true"></div>
-            <div class="service-number-label">04</div>
-            <h3 class="service-title">Team Stores &amp; Programs</h3>
-            <p class="service-desc">
+            <div class="svc-num">04</div>
+            <h3 class="svc-title">Team Stores &amp; Programs</h3>
+            <p class="svc-desc">
               Managing individual orders for a large group is a logistics problem
               most vendors are not equipped for. We build and run structured ordering
               programs so your organization gets what it needs without the chaos.
             </p>
-            <ul class="service-items" role="list">
+            <ul class="svc-list" role="list">
               <li>College &amp; Campus Stores</li>
               <li>Employee Company Stores</li>
               <li>Team Ordering Programs</li>
@@ -359,15 +343,14 @@
 
           <article class="service-card" aria-label="Creative Sourcing">
             <div class="service-card-accent" aria-hidden="true"></div>
-            <div class="service-number-label">05</div>
-            <h3 class="service-title">Creative Sourcing</h3>
-            <p class="service-desc">
+            <div class="svc-num">05</div>
+            <h3 class="svc-title">Creative Sourcing</h3>
+            <p class="svc-desc">
               If what you need is not in a standard catalog, that is where we do
               our best work. Custom product development, branded kits, and
-              trend-forward merchandise for organizations that want to stand out,
-              not blend in.
+              trend-forward merchandise for organizations that want to stand out.
             </p>
-            <ul class="service-items" role="list">
+            <ul class="svc-list" role="list">
               <li>Custom Product Development</li>
               <li>Trend-Forward Merch</li>
               <li>Branded Kits &amp; Boxes</li>
@@ -377,20 +360,16 @@
             </ul>
           </article>
 
-          <!-- CONVERSION CARD within service grid -->
+          <!-- CTA card — hunter green -->
           <article class="service-card service-card--cta" aria-label="Start a project">
-            <p class="service-cta-label">Work with Foundry</p>
-            <h3 class="service-cta-heading">
-              Let us take the project off your plate.
-            </h3>
-            <p class="service-cta-sub">
+            <p class="cta-card-label">Work with Foundry</p>
+            <h3 class="cta-card-heading">Let us take the project off your plate.</h3>
+            <p class="cta-card-sub">
               Built for established teams and organizations.
               Project minimums may apply.
             </p>
-            <a
-              href="mailto:Collin@foundryprintpromo.com?subject=New%20Project%20Inquiry%20-%20Foundry%20Print%20and%20Promo&body=Name%3A%0ACompany%3A%0APhone%3A%0AProject%20Type%3A%0AEstimated%20Quantity%3A%0ANeeded%20By%3A%0ATell%20us%20about%20the%20project%3A"
-              class="btn btn-primary"
-            >
+            <a href="mailto:Collin@foundryprintpromo.com?subject=New%20Project%20Inquiry%20-%20Foundry%20Print%20and%20Promo&body=Name%3A%0ACompany%3A%0APhone%3A%0AProject%20Type%3A%0AEstimated%20Quantity%3A%0ANeeded%20By%3A%0ATell%20us%20about%20the%20project%3A"
+               class="btn btn-primary">
               Start a Project
             </a>
           </article>
@@ -400,86 +379,85 @@
     </section>
 
 
-    <!-- ================================================
-         SECTION 05: WHY FOUNDRY
-         COPY DIRECTION: Each point addresses a specific
-         failure mode of bad vendors. Confident and direct.
-         Not boastful. Grounded in the actual experience
-         of working with Foundry.
-    ================================================ -->
+    <!-- ============================================================
+         05 — WHY FOUNDRY
+    ============================================================ -->
     <section class="why-foundry" id="why-foundry" aria-labelledby="why-heading">
       <div class="container">
 
-        <div class="section-label">Why Foundry</div>
-        <h2 class="section-heading" id="why-heading">
-          We Understand Why You<br />Stopped Trusting Vendors
-        </h2>
+        <div class="why-header reveal">
+          <div>
+            <div class="eyebrow">Why Foundry</div>
+            <h2 class="t-heading" id="why-heading">
+              We Understand Why<br />You Stopped Trusting<br />Vendors
+            </h2>
+          </div>
+          <p class="section-intro" style="margin-top:0; margin-bottom:0;">
+            Every one of these points addresses a specific failure mode
+            of the vendor who let you down. We built Foundry around fixing them.
+          </p>
+        </div>
 
-        <div class="why-grid">
+        <div class="why-grid reveal-grid">
 
           <div class="why-card">
-            <div class="why-number" aria-hidden="true">01</div>
+            <div class="why-num">01</div>
             <h3 class="why-title">We Respond. Consistently.</h3>
             <p class="why-desc">
-              The most common complaint about print and promo vendors
-              is not the product. It is the silence after the order is placed.
-              At Foundry, you will always know where things stand.
-              We send updates before you have to ask for them.
+              The most common complaint about print and promo vendors is not the product.
+              It is the silence after the order is placed. At Foundry, you will always know
+              where things stand. We send updates before you have to ask.
             </p>
           </div>
 
           <div class="why-card">
-            <div class="why-number" aria-hidden="true">02</div>
+            <div class="why-num">02</div>
             <h3 class="why-title">One Person. Total Ownership.</h3>
             <p class="why-desc">
-              You work directly with someone who knows your project,
-              your organization, and what matters to you.
-              Not a rotating cast of reps. Not a support ticket system.
+              You work directly with someone who knows your project, your organization,
+              and what matters to you. Not a rotating cast of reps. Not a support ticket.
               One person who is accountable from inquiry to delivery.
             </p>
           </div>
 
           <div class="why-card">
-            <div class="why-number" aria-hidden="true">03</div>
+            <div class="why-num">03</div>
             <h3 class="why-title">Problems Get Solved, Not Deflected.</h3>
             <p class="why-desc">
-              Production is not perfect. When something goes sideways,
-              the measure of a partner is how they handle it.
-              We own the problem, present a solution, and make it right.
+              Production is not perfect. When something goes sideways, the measure of a partner
+              is how they handle it. We own the problem, present a solution, and make it right.
               We do not point to the vendor. We are the vendor.
             </p>
           </div>
 
           <div class="why-card">
-            <div class="why-number" aria-hidden="true">04</div>
+            <div class="why-num">04</div>
             <h3 class="why-title">Quality Is the Baseline, Not the Upsell.</h3>
             <p class="why-desc">
-              We do not offer a tiered experience where quality costs extra.
-              Every order gets proper sourcing, proper proofing, and proper inspection.
-              We work with organizations that have high standards.
-              We hold ourselves to the same ones.
+              We do not offer a tiered experience where quality costs extra. Every order gets
+              proper sourcing, proper proofing, and proper inspection. We work with organizations
+              that have high standards. We hold ourselves to the same ones.
             </p>
           </div>
 
           <div class="why-card">
-            <div class="why-number" aria-hidden="true">05</div>
+            <div class="why-num">05</div>
             <h3 class="why-title">We Are Invested in the Long Game.</h3>
             <p class="why-desc">
               A first project with Foundry is the beginning of a working relationship,
-              not a transaction we close and move past.
-              We want to understand your organization well enough
-              to make every subsequent project faster, better, and less work for you.
+              not a transaction we close and move past. We want to understand your organization
+              well enough to make every subsequent project faster and less work for you.
             </p>
           </div>
 
           <div class="why-card">
-            <div class="why-number" aria-hidden="true">06</div>
+            <div class="why-num">06</div>
             <h3 class="why-title">Charleston-Based. Nationally Capable.</h3>
             <p class="why-desc">
               We are rooted in Charleston and proud of the way we work.
               Southern hospitality is not a tagline here. It is the culture.
-              We ship nationwide and bring that same standard of service
-              to every organization we work with, regardless of where they are.
+              We ship nationwide and bring that same standard of service to
+              every organization we work with, regardless of where they are.
             </p>
           </div>
 
@@ -488,99 +466,109 @@
     </section>
 
 
-    <!-- ================================================
-         SECTION 06: PROCESS
-         COPY DIRECTION: Operational confidence. Short,
-         clear, specific. Communicates that Foundry has
-         a real system, not a reactive scramble.
-    ================================================ -->
+    <!-- ============================================================
+         06 — PROCESS
+    ============================================================ -->
     <section class="process" id="process" aria-labelledby="process-heading">
       <div class="container">
 
-        <div class="section-label">How It Works</div>
-        <h2 class="section-heading" id="process-heading">
-          A Clear Process.<br />No Surprises.
-        </h2>
+        <div class="process-header reveal">
+          <div>
+            <div class="eyebrow">How It Works</div>
+            <h2 class="t-heading" id="process-heading">
+              A Clear Process.<br />No Surprises.
+            </h2>
+          </div>
+          <p class="section-intro" style="margin-top:0; margin-bottom:0;">
+            From the first email to the final shipment, every step is defined,
+            communicated, and accounted for. This is what working with a real
+            partner looks like.
+          </p>
+        </div>
 
-        <div class="process-steps">
+        <div class="process-steps reveal-grid">
 
           <div class="process-step">
-            <div class="step-number" aria-hidden="true">01</div>
+            <div class="step-number-wrap">
+              <div class="step-num-box">01</div>
+              <div class="step-connector" aria-hidden="true"></div>
+            </div>
             <h3 class="step-title">Inquire</h3>
             <p class="step-desc">
-              Send us the project details: what you need, when you need it,
-              and how many. The more context you give us up front,
-              the more precisely we can respond. We will follow up quickly.
+              Send us the project details: what you need, when you need it, and how many.
+              The more context you give us up front, the more precisely we can respond.
+              We will follow up quickly.
             </p>
           </div>
 
           <div class="process-step">
-            <div class="step-number" aria-hidden="true">02</div>
+            <div class="step-number-wrap">
+              <div class="step-num-box">02</div>
+              <div class="step-connector" aria-hidden="true"></div>
+            </div>
             <h3 class="step-title">Consult</h3>
             <p class="step-desc">
-              We evaluate the project, source the right products,
-              and put together a clear recommendation with pricing and timeline.
+              We evaluate the project, source the right products, and put together
+              a clear recommendation with pricing and a realistic timeline.
               No vague estimates. No bait-and-switch after approval.
             </p>
           </div>
 
           <div class="process-step">
-            <div class="step-number" aria-hidden="true">03</div>
+            <div class="step-number-wrap">
+              <div class="step-num-box">03</div>
+              <div class="step-connector" aria-hidden="true"></div>
+            </div>
             <h3 class="step-title">Produce</h3>
             <p class="step-desc">
-              Once you approve the proof and the order is confirmed,
-              we move into production. You receive updates at each milestone
-              and have a direct line to the person managing your order.
+              Once you approve the proof and the order is confirmed, we move into production.
+              You receive updates at each milestone and have a direct line to the person
+              managing your order.
             </p>
           </div>
 
           <div class="process-step">
-            <div class="step-number" aria-hidden="true">04</div>
+            <div class="step-number-wrap">
+              <div class="step-num-box">04</div>
+            </div>
             <h3 class="step-title">Deliver</h3>
             <p class="step-desc">
-              Your order is inspected before it ships or is picked up.
-              It arrives on time and as approved. If it does not,
-              we fix it at our expense. That is the commitment.
+              Your order is inspected before it ships or is picked up. It arrives on time
+              and as approved. If it does not, we fix it at our expense.
+              That is the commitment.
             </p>
           </div>
 
         </div>
 
-        <div class="process-cta">
-          <a
-            href="mailto:Collin@foundryprintpromo.com?subject=New%20Project%20Inquiry%20-%20Foundry%20Print%20and%20Promo&body=Name%3A%0ACompany%3A%0APhone%3A%0AProject%20Type%3A%0AEstimated%20Quantity%3A%0ANeeded%20By%3A%0ATell%20us%20about%20the%20project%3A"
-            class="btn btn-primary"
-          >
+        <div class="process-footer">
+          <a href="mailto:Collin@foundryprintpromo.com?subject=New%20Project%20Inquiry%20-%20Foundry%20Print%20and%20Promo&body=Name%3A%0ACompany%3A%0APhone%3A%0AProject%20Type%3A%0AEstimated%20Quantity%3A%0ANeeded%20By%3A%0ATell%20us%20about%20the%20project%3A"
+             class="btn btn-primary">
             Start a Project
           </a>
-          <a href="#why-foundry" class="btn btn-secondary">
-            Why Foundry
-          </a>
+          <a href="#why-foundry" class="btn btn-secondary">Why Foundry</a>
         </div>
 
       </div>
     </section>
 
 
-    <!-- ================================================
-         SECTION 07: AGENCY PARTNERSHIP
-         COPY DIRECTION: Peer-to-peer. Direct. Speaks to
-         the specific professional fear of being let down
-         in front of a client. Positions Foundry as a
-         colleague, not a subcontractor.
-    ================================================ -->
+    <!-- ============================================================
+         07 — AGENCY PARTNERSHIP
+    ============================================================ -->
     <section class="agency" id="agency" aria-labelledby="agency-heading">
       <div class="container">
-
         <div class="agency-inner">
-          <div class="agency-text">
-            <div class="section-label">Agency &amp; Studio Partners</div>
-            <h2 class="section-heading" id="agency-heading">
-              The Production Partner<br />You Can Put Your Name On
+
+          <div class="agency-text reveal">
+            <div class="eyebrow">Agency &amp; Studio Partners</div>
+            <h2 class="t-heading" id="agency-heading">
+              The Production Partner<br />You Can Put<br />Your Name On
             </h2>
+
             <p class="agency-desc">
-              You have been burned before. A vendor who quoted fast, communicated
-              well during the sale, then went quiet the moment the order was in.
+              You have been burned before. A vendor who quoted fast, communicated well
+              during the sale, then went quiet the moment the order was in.
               Your client took the hit. You absorbed it.
               That is the production problem Foundry is built to solve.
             </p>
@@ -590,118 +578,106 @@
               We handle sourcing, decoration, quality control, and fulfillment
               with the kind of consistency you can actually put in a proposal.
             </p>
-            <ul class="agency-bullets" role="list">
+
+            <ul class="agency-list" role="list">
               <li>White-label production with strict confidentiality</li>
               <li>One dedicated contact who knows your clients and standards</li>
               <li>Apparel, signage, promo, and fulfillment under one relationship</li>
-              <li>Turnaround timelines built into your production schedule, not ours</li>
+              <li>Turnaround timelines built into your schedule, not ours</li>
               <li>The kind of execution that makes you look like you planned it perfectly</li>
             </ul>
-            <a
-              href="mailto:Collin@foundryprintpromo.com?subject=Agency%20Partnership%20Inquiry%20-%20Foundry%20Print%20and%20Promo&body=Agency%20Name%3A%0AContact%20Name%3A%0APhone%3A%0ATell%20us%20about%20your%20work%3A"
-              class="btn btn-primary"
-            >
+
+            <a href="mailto:Collin@foundryprintpromo.com?subject=Agency%20Partnership%20Inquiry%20-%20Foundry%20Print%20and%20Promo&body=Agency%20Name%3A%0AContact%20Name%3A%0APhone%3A%0ATell%20us%20about%20your%20work%3A"
+               class="btn btn-primary">
               Partner With Foundry
             </a>
           </div>
 
-          <div class="agency-accent-block" aria-hidden="true">
-            <div class="agency-stat">
-              <span class="agency-stat-num">5</span>
-              <span class="agency-stat-label">Service Categories</span>
-            </div>
-            <div class="agency-stat">
-              <span class="agency-stat-num">1</span>
-              <span class="agency-stat-label">Point of Contact</span>
-            </div>
-            <div class="agency-stat">
-              <span class="agency-stat-num">0</span>
-              <span class="agency-stat-label">Ghosted Clients</span>
+          <div class="agency-panel reveal">
+            <div class="agency-panel-inner">
+              <div class="agency-stat">
+                <div class="agency-stat-num">5</div>
+                <div class="agency-stat-label">Service Categories</div>
+              </div>
+              <div class="agency-stat">
+                <div class="agency-stat-num">1</div>
+                <div class="agency-stat-label">Point of Contact</div>
+              </div>
+              <div class="agency-stat">
+                <div class="agency-stat-num">0</div>
+                <div class="agency-stat-label">Ghosted Clients</div>
+              </div>
             </div>
           </div>
-        </div>
 
+        </div>
       </div>
     </section>
 
 
-    <!-- ================================================
-         SECTION 08: FEATURED WORK / PRODUCT CATEGORIES
+    <!-- ============================================================
+         08 — FEATURED WORK
          REPLACE: swap assets/work-1.jpg through work-4.jpg
          with real product or project photography.
-         Recommended dimensions: 800x1000px, portrait.
-    ================================================ -->
+         Recommended: portrait orientation, 800x1000px min.
+    ============================================================ -->
     <section class="featured-work" id="featured-work" aria-labelledby="work-heading">
       <div class="container">
 
-        <div class="section-label">Featured Work</div>
-        <h2 class="section-heading" id="work-heading">
-          The Work Speaks.
-        </h2>
-        <p class="section-intro">
-          A sample of what Foundry produces for the organizations we partner with.
-        </p>
-
-        <div class="work-grid">
-
-          <!-- WORK CARD 01 -->
-          <!-- Replace src with a real photo path, e.g. assets/apparel-project.jpg -->
-          <div class="work-card">
-            <div class="work-img-wrap">
-              <img
-                src="assets/work-1.jpg"
-                alt="Brand apparel — screen printed tees and embroidered hats for a collegiate program"
-                class="work-img"
-                loading="lazy"
-                onerror="this.parentElement.classList.add('work-img-placeholder')"
-              />
-            </div>
-            <div class="work-card-label">Brand Apparel</div>
+        <div class="work-header reveal">
+          <div>
+            <div class="eyebrow">Featured Work</div>
+            <h2 class="t-heading" id="work-heading">The Work Speaks.</h2>
           </div>
+          <p class="section-intro" style="margin-top:0; margin-bottom:0;">
+            A sample of what Foundry produces for the organizations we partner with.
+          </p>
+        </div>
 
-          <!-- WORK CARD 02 -->
+        <div class="work-grid reveal-grid">
+
           <!-- Replace src with your actual project photo -->
           <div class="work-card">
-            <div class="work-img-wrap">
-              <img
-                src="assets/work-2.jpg"
-                alt="Promotional goods — custom branded drinkware and corporate gift kit"
-                class="work-img"
-                loading="lazy"
-                onerror="this.parentElement.classList.add('work-img-placeholder')"
-              />
+            <div class="work-img-wrap" id="work-wrap-1">
+              <img src="assets/work-1.jpg"
+                   alt="Brand apparel — screen printed tees and embroidered hats"
+                   class="work-img" loading="lazy"
+                   onerror="document.getElementById('work-wrap-1').classList.add('placeholder')" />
             </div>
-            <div class="work-card-label">Promotional Goods</div>
+            <div class="work-label">Brand Apparel</div>
           </div>
 
-          <!-- WORK CARD 03 -->
           <!-- Replace src with your actual project photo -->
           <div class="work-card">
-            <div class="work-img-wrap">
-              <img
-                src="assets/work-3.jpg"
-                alt="Signage and print — large format event banners and window graphics"
-                class="work-img"
-                loading="lazy"
-                onerror="this.parentElement.classList.add('work-img-placeholder')"
-              />
+            <div class="work-img-wrap" id="work-wrap-2">
+              <img src="assets/work-2.jpg"
+                   alt="Promotional goods — branded drinkware and corporate gift kits"
+                   class="work-img" loading="lazy"
+                   onerror="document.getElementById('work-wrap-2').classList.add('placeholder')" />
             </div>
-            <div class="work-card-label">Signage &amp; Print</div>
+            <div class="work-label">Promotional Goods</div>
           </div>
 
-          <!-- WORK CARD 04 -->
           <!-- Replace src with your actual project photo -->
           <div class="work-card">
-            <div class="work-img-wrap">
-              <img
-                src="assets/work-4.jpg"
-                alt="Team store — branded merchandise program for a sports organization"
-                class="work-img"
-                loading="lazy"
-                onerror="this.parentElement.classList.add('work-img-placeholder')"
-              />
+            <div class="work-img-wrap" id="work-wrap-3">
+              <img src="assets/work-3.jpg"
+                   alt="Signage and print — large format banners and window graphics"
+                   class="work-img" loading="lazy"
+                   onerror="document.getElementById('work-wrap-3').classList.add('placeholder')" />
             </div>
-            <div class="work-card-label">Team Stores</div>
+            <div class="work-label">Signage &amp; Print</div>
+          </div>
+
+          <!-- Replace src with your actual project photo -->
+          <div class="work-card">
+            <div class="work-img-wrap" id="work-wrap-4">
+              <img src="assets/work-4.jpg"
+                   alt="Team store — branded merchandise program for a sports organization"
+                   class="work-img" loading="lazy"
+                   onerror="document.getElementById('work-wrap-4').classList.add('placeholder')" />
+            </div>
+            <div class="work-label">Team Stores</div>
           </div>
 
         </div>
@@ -709,16 +685,13 @@
     </section>
 
 
-    <!-- ================================================
-         SECTION 09: FAITH AND VALUES
-         COPY DIRECTION: Sincere. Not preachy. This is
-         a founder's note, not a mission statement.
-         It connects values to observable behavior.
-    ================================================ -->
+    <!-- ============================================================
+         09 — FAITH & VALUES
+    ============================================================ -->
     <section class="faith-values" id="faith-values" aria-labelledby="faith-heading">
       <div class="container">
+        <div class="faith-inner reveal">
 
-        <div class="faith-inner">
           <div class="faith-rule" aria-hidden="true"></div>
 
           <blockquote class="faith-quote">
@@ -738,81 +711,78 @@
           </blockquote>
 
           <cite class="faith-attribution">
-            Collin &mdash; Foundry Print and Promo, Charleston, SC
+            <span class="eyebrow" style="justify-content:center; margin-bottom:0;">
+              Collin &mdash; Foundry Print and Promo, Charleston, SC
+            </span>
           </cite>
 
           <div class="faith-rule" aria-hidden="true"></div>
         </div>
-
       </div>
     </section>
 
 
-    <!-- ================================================
-         SECTION 10: FINAL START A PROJECT CTA
-         COPY DIRECTION: Closing argument. Confident,
-         warm, clear. Removes friction and justifies the
-         ask. Two CTAs: email and phone for different
-         preferences.
-    ================================================ -->
+    <!-- ============================================================
+         10 — FINAL CTA
+    ============================================================ -->
     <section class="final-cta" id="start-project" aria-labelledby="cta-heading">
       <div class="container">
+        <div class="final-cta-inner reveal">
 
-        <div class="final-cta-inner">
-          <div class="section-label section-label--light">Ready to Begin</div>
-          <h2 class="final-cta-heading" id="cta-heading">
-            If You Want It<br />Done Right,<br />Let's Talk.
-          </h2>
-          <p class="final-cta-sub">
-            Tell us about your project. We will respond with a clear plan,
-            honest pricing, and a realistic timeline.
-            No follow-up pressure. No inflated quotes to negotiate down.
-            Just a straight answer from a partner who wants to earn your trust.
-          </p>
-
-          <div class="final-cta-actions">
-            <a
-              href="mailto:Collin@foundryprintpromo.com?subject=New%20Project%20Inquiry%20-%20Foundry%20Print%20and%20Promo&body=Name%3A%0ACompany%3A%0APhone%3A%0AProject%20Type%3A%0AEstimated%20Quantity%3A%0ANeeded%20By%3A%0ATell%20us%20about%20the%20project%3A"
-              class="btn btn-primary btn-lg"
-            >
-              Start a Project
-            </a>
-            <a href="tel:+18432592753" class="btn btn-secondary btn-lg">
-              Call (843) 259-2753
-            </a>
+          <div class="final-cta-left">
+            <div class="eyebrow">Ready to Begin</div>
+            <h2 class="t-heading final-cta-heading" id="cta-heading">
+              If You Want It<br />Done Right,<br />Let's Talk.
+            </h2>
           </div>
 
-          <p class="final-cta-qualifier">
-            Based in Charleston, SC. Shipping and serving organizations nationwide.
-            Built for established teams and organizations. Project minimums may apply.
-          </p>
-        </div>
+          <div class="final-cta-right">
+            <p class="final-cta-body">
+              Tell us about your project. We will respond with a clear plan,
+              honest pricing, and a realistic timeline.
+              No follow-up pressure. No inflated quotes to negotiate down.
+              Just a straight answer from a partner who wants to earn your trust.
+            </p>
 
+            <div class="btn-group">
+              <a href="mailto:Collin@foundryprintpromo.com?subject=New%20Project%20Inquiry%20-%20Foundry%20Print%20and%20Promo&body=Name%3A%0ACompany%3A%0APhone%3A%0AProject%20Type%3A%0AEstimated%20Quantity%3A%0ANeeded%20By%3A%0ATell%20us%20about%20the%20project%3A"
+                 class="btn btn-primary btn-lg">
+                Start a Project
+              </a>
+              <a href="tel:+18432592753" class="btn btn-secondary btn-lg">
+                Call (843) 259-2753
+              </a>
+            </div>
+
+            <p class="final-cta-qualifier">
+              Based in Charleston, SC. Serving organizations nationwide.
+              Built for established teams and organizations. Project minimums may apply.
+            </p>
+          </div>
+
+        </div>
       </div>
     </section>
 
   </main>
 
 
-  <!-- ================================================
+  <!-- ============================================================
        FOOTER
-  ================================================ -->
+  ============================================================ -->
   <footer class="site-footer" role="contentinfo">
     <div class="container">
 
       <div class="footer-top">
 
-        <!-- FOOTER LOGO -->
         <div class="footer-brand">
           <a href="#hero" class="logo-link" aria-label="Foundry Print and Promo — Back to top">
-            <img
-              src="assets/Primary Light.svg"
-              alt="Foundry Print and Promo"
-              class="logo-img logo-img--footer"
-              onerror="this.style.display='none'; document.getElementById('footer-logo-fallback').style.display='flex';"
-            />
-            <span class="logo-fallback logo-fallback--footer" id="footer-logo-fallback" style="display:none;" aria-hidden="true">
-              <span class="logo-fallback-foundry">FOUNDRY</span>
+            <img src="assets/Primary Light.svg"
+                 alt="Foundry Print and Promo"
+                 class="logo-img logo-img--lg"
+                 onerror="this.style.display='none'; document.getElementById('footer-logo-fb').style.display='flex';" />
+            <span class="logo-fallback" id="footer-logo-fb" style="display:none;" aria-hidden="true">
+              <span class="logo-fallback-name">FOUNDRY</span>
               <span class="logo-fallback-sub">PRINT &amp; PROMO</span>
             </span>
           </a>
@@ -820,41 +790,33 @@
           <p class="footer-location">Based in Charleston, SC. Serving organizations nationwide.</p>
         </div>
 
-        <!-- FOOTER NAV -->
         <nav class="footer-nav" aria-label="Footer navigation">
-          <p class="footer-nav-heading">Navigation</p>
+          <p class="footer-col-heading">Navigation</p>
           <ul class="footer-nav-list" role="list">
             <li><a href="#who-we-serve" class="footer-link">Who We Serve</a></li>
-            <li><a href="#services" class="footer-link">Services</a></li>
-            <li><a href="#why-foundry" class="footer-link">Why Foundry</a></li>
-            <li><a href="#process" class="footer-link">Process</a></li>
-            <li><a href="#agency" class="footer-link">Agency Partners</a></li>
+            <li><a href="#services"     class="footer-link">Services</a></li>
+            <li><a href="#why-foundry"  class="footer-link">Why Foundry</a></li>
+            <li><a href="#process"      class="footer-link">Process</a></li>
+            <li><a href="#agency"       class="footer-link">Agency Partners</a></li>
             <li><a href="#faith-values" class="footer-link">Our Values</a></li>
           </ul>
         </nav>
 
-        <!-- FOOTER CONTACT -->
         <div class="footer-contact">
-          <p class="footer-nav-heading">Contact</p>
+          <p class="footer-col-heading">Contact</p>
           <ul class="footer-contact-list" role="list">
             <li>
-              <a href="tel:+18432592753" class="footer-link footer-link--contact">
-                (843) 259-2753
-              </a>
+              <a href="tel:+18432592753" class="footer-contact-link">(843) 259-2753</a>
             </li>
             <li>
-              <a href="mailto:Collin@foundryprintpromo.com" class="footer-link footer-link--contact">
+              <a href="mailto:Collin@foundryprintpromo.com" class="footer-contact-link">
                 Collin@foundryprintpromo.com
               </a>
             </li>
-            <li class="footer-address">
-              Charleston, South Carolina
-            </li>
+            <li class="footer-address">Charleston, South Carolina</li>
           </ul>
-          <a
-            href="mailto:Collin@foundryprintpromo.com?subject=New%20Project%20Inquiry%20-%20Foundry%20Print%20and%20Promo&body=Name%3A%0ACompany%3A%0APhone%3A%0AProject%20Type%3A%0AEstimated%20Quantity%3A%0ANeeded%20By%3A%0ATell%20us%20about%20the%20project%3A"
-            class="btn btn-primary btn-sm footer-cta"
-          >
+          <a href="mailto:Collin@foundryprintpromo.com?subject=New%20Project%20Inquiry%20-%20Foundry%20Print%20and%20Promo&body=Name%3A%0ACompany%3A%0APhone%3A%0AProject%20Type%3A%0AEstimated%20Quantity%3A%0ANeeded%20By%3A%0ATell%20us%20about%20the%20project%3A"
+             class="btn btn-primary btn-sm" style="margin-top: 1.25rem;">
             Start a Project
           </a>
         </div>
@@ -865,9 +827,7 @@
         <p class="footer-legal">
           &copy; <span id="current-year"></span> Foundry Print and Promo. All rights reserved.
         </p>
-        <p class="footer-faith-note">
-          Doing good work, for God's glory.
-        </p>
+        <p class="footer-faith">Doing good work, for God's glory.</p>
       </div>
 
     </div>
